@@ -1,69 +1,125 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>FC Mobile – Česká Liga</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #004aad, #00c6ff);
-      color: #fff;
       margin: 0;
       padding: 0;
+      background: #000;
+      color: #fff;
     }
+
     header {
-      background: rgba(0,0,0,0.3);
-      padding: 20px;
+      background: linear-gradient(to right, #ff0000 33%, #0000ff 33%, #0000ff 66%, #ff0000 66%);
       text-align: center;
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+      padding: 20px;
+      position: relative;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      display: inline-block;
+      font-size: 2rem;
+      vertical-align: middle;
+      margin: 0;
       text-shadow: 2px 2px 4px #000;
     }
+
     main {
       max-width: 700px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
       margin: 40px auto;
       padding: 20px 30px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
-      text-shadow: 1px 1px 3px #000;
+      color: #fff;
     }
+
     ul.nominees {
       list-style: none;
       padding: 0;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       line-height: 1.7;
-      color: #e0e0e0;
     }
+
     ul.nominees li {
-      background: rgba(0, 75, 173, 0.7);
+      background: rgba(255,255,255,0.1);
       margin: 10px 0;
       padding: 12px 18px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      border-left: 5px solid #ff0000;
+      border-radius: 6px;
       transition: background 0.3s ease;
     }
+
     ul.nominees li:hover {
-      background: rgba(0, 75, 173, 0.9);
+      background: rgba(255,255,255,0.2);
       cursor: default;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      color: #fff;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      text-align: center;
+    }
+
+    table tr:nth-child(even) {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .players {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .players div {
+      text-align: center;
+    }
+
+    .players img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #fff;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       margin: 40px 0 20px 0;
-      color: #ddd;
-      text-shadow: 1px 1px 2px #000;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
 
-  <header>⚽ FC Mobile – Česká Liga</header>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_Fotbalove_reprezentace_Ceske_republiky.svg" alt="Czech Football Logo">
+    <h1>FC Mobile – Česká Liga</h1>
+  </header>
 
   <main>
     <h2>Nominace na turnaj</h2>
@@ -73,6 +129,55 @@
       <li>HonzaPlays</li>
       <li>Lucka2026</li>
     </ul>
+
+    <h2>Tabulka turnaje</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Hráč</th>
+          <th>Body</th>
+          <th>Výhry</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>PepaFC</td>
+          <td>15</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>MartinaGamer</td>
+          <td>12</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>HonzaPlays</td>
+          <td>10</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Hráči</h2>
+    <div class="players">
+      <div>
+        <img src="https://i.pravatar.cc/100?u=pepa" alt="PepaFC">
+        <p>PepaFC</p>
+      </div>
+      <div>
+        <img src="https://i.pravatar.cc/100?u=martina" alt="MartinaGamer">
+        <p>MartinaGamer</p>
+      </div>
+      <div>
+        <img src="https://i.pravatar.cc/100?u=honza" alt="HonzaPlays">
+        <p>HonzaPlays</p>
+      </div>
+    </div>
+
     <p style="text-align:center; margin-top: 30px; font-style: italic;">
       📅 Poslední aktualizace: dnes
     </p>
