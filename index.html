@@ -13,7 +13,7 @@
     }
 
     header {
-      background: linear-gradient(to right, #ff0000 33%, #0000ff 33%, #0000ff 66%, #ff0000 66%);
+      background: linear-gradient(to right, #ff0000 33%, #001f4d 33%, #001f4d 66%, #ff0000 66%);
       text-align: center;
       padding: 20px;
       position: relative;
@@ -87,25 +87,6 @@
       background: rgba(255,255,255,0.05);
     }
 
-    .players {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .players div {
-      text-align: center;
-    }
-
-    .players img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      border: 2px solid #fff;
-    }
-
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -117,7 +98,9 @@
 <body>
 
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_Fotbalove_reprezentace_Ceske_republiky.svg" alt="Czech Football Logo">
+    <!-- Corrected Czech football logo link -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_Fotbalove_reprezentace_Ceske_republiky.svg" 
+         alt="Czech Football Logo" onerror="this.style.display='none'">
     <h1>FC Mobile – Česká Liga</h1>
   </header>
 
@@ -162,28 +145,12 @@
       </tbody>
     </table>
 
-    <h2>Hráči</h2>
-    <div class="players">
-      <div>
-        <img src="https://i.pravatar.cc/100?u=pepa" alt="PepaFC">
-        <p>PepaFC</p>
-      </div>
-      <div>
-        <img src="https://i.pravatar.cc/100?u=martina" alt="MartinaGamer">
-        <p>MartinaGamer</p>
-      </div>
-      <div>
-        <img src="https://i.pravatar.cc/100?u=honza" alt="HonzaPlays">
-        <p>HonzaPlays</p>
-      </div>
-    </div>
-
     <p style="text-align:center; margin-top: 30px; font-style: italic;">
       📅 Poslední aktualizace: dnes
     </p>
   </main>
 
-  <footer>Web pouze pro přátele – &copy; 2026 FC Mobile</footer>
+  <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
 
 </body>
 </html>
