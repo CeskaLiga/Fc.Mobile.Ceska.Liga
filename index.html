@@ -14,7 +14,7 @@
 
     /* HEADER */
     header {
-      background: #001f4d; /* Dark blue base */
+      background: #001f4d;
       text-align: center;
       padding: 20px;
       position: relative;
@@ -45,10 +45,20 @@
     }
 
     main {
-      max-width: 700px;
-      background: rgba(255,255,255,0.05);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1000px;
       margin: 40px auto;
-      padding: 20px 30px;
+    }
+
+    /* NOMINEES */
+    .nominees-box {
+      flex: 1 1 300px;
+      min-width: 300px;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
@@ -66,7 +76,7 @@
       line-height: 1.7;
     }
 
-    /* GLOWING ANIMATED HOVER FOR NOMINEES */
+    /* GLOWING HOVER */
     ul.nominees li {
       position: relative;
       overflow: hidden;
@@ -104,7 +114,44 @@
       cursor: default;
     }
 
-    /* COUNTDOWN TIMER */
+    /* TOP PLAYERS */
+    .top-players {
+      flex: 1 1 250px;
+      min-width: 250px;
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .top-players h3 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .top-players ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .top-players ul li {
+      border-left: 5px solid #D7141A;
+      padding-left: 10px;
+      margin-bottom: 8px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .top-players ul li:hover {
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 8px #fff;
+    }
+
+    /* COUNTDOWN */
     #countdown {
       display: block;
       text-align: center;
@@ -131,38 +178,46 @@
   </header>
 
   <main>
-    <h2>Nominační seznam – zápas proti Arab FC</h2>
-    <ul class="nominees">
-      <li>PatrikCZ-ACS</li>
-      <li>Honza</li>
-      <li>Mbappégoat</li>
-      <li>Jony</li>
-      <li>Kreky</li>
-      <li>SlaviaPraha</li>
-      <li>Pavko_SVK</li>
-      <li>Lukas_svk</li>
-      <li>CzechFootball</li>
-      <li>Real Madrid</li>
-      <li>Azbuka</li>
-      <li>Klaksanátor</li>
-      <li>dessi</li>
-      <li>Djee</li>
-      <li>Mirovka</li>
-      <li>Jarda Čmoud</li>
-    </ul>
+    <!-- Nominees -->
+    <div class="nominees-box">
+      <h2>Nominační seznam – zápas proti Arab FC</h2>
+      <ul class="nominees">
+        <li>PatrikCZ-ACS</li>
+        <li>Honza</li>
+        <li>Mbappégoat</li>
+        <li>Jony</li>
+        <li>Kreky</li>
+        <li>SlaviaPraha</li>
+        <li>Pavko_SVK</li>
+        <li>Lukas_svk</li>
+        <li>CzechFootball</li>
+        <li>Real Madrid</li>
+        <li>Azbuka</li>
+        <li>Klaksanátor</li>
+        <li>dessi</li>
+        <li>Djee</li>
+        <li>Mirovka</li>
+        <li>Jarda Čmoud</li>
+      </ul>
 
-    <!-- COUNTDOWN -->
-    <p id="countdown">⏰ Zbývá: 23:27:00</p>
+      <p id="countdown">⏰ Zbývá: 23:27:00</p>
+    </div>
 
-    <p style="text-align:center; margin-top: 20px; font-style: italic;">
-      📅 Poslední aktualizace: dnes
-    </p>
+    <!-- Top Players -->
+    <div class="top-players">
+      <h3>Nejaktivnější hráči</h3>
+      <ul>
+        <li>TORnado – 5280 Activity points</li>
+        <li>PatrikCZ-ACS – 5060 Activity points</li>
+        <li>Honza – 4925 Activity points</li>
+      </ul>
+    </div>
   </main>
 
   <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
 
   <script>
-    // Set countdown to 23 hours 27 minutes from now
+    // Countdown 23 hours 27 minutes from now
     let matchTime = new Date();
     matchTime.setHours(matchTime.getHours() + 23);
     matchTime.setMinutes(matchTime.getMinutes() + 27);
