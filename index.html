@@ -1,70 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>FC Mobile – Česká Liga</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-      padding: 40px;
-    }
-
-    h1 {
-      color: #222;
-    }
-
-    .container {
-      background: white;
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    ul {
-      list-style: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #004aad, #00c6ff);
+      color: #fff;
+      margin: 0;
       padding: 0;
     }
-
-    li {
-      background: #eaeaea;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 18px;
+    header {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-shadow: 2px 2px 4px #000;
     }
-
+    main {
+      max-width: 700px;
+      background: rgba(255,255,255,0.1);
+      margin: 40px auto;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+    ul.nominees {
+      list-style: none;
+      padding: 0;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+    }
+    ul.nominees li {
+      background: rgba(0, 75, 173, 0.7);
+      margin: 10px 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease;
+    }
+    ul.nominees li:hover {
+      background: rgba(0, 75, 173, 0.9);
+      cursor: default;
+    }
     footer {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #666;
+      text-align: center;
+      font-size: 0.9rem;
+      margin: 40px 0 20px 0;
+      color: #ddd;
+      text-shadow: 1px 1px 2px #000;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>⚽ FC Mobile – Česká Liga</h1>
+  <header>⚽ FC Mobile – Česká Liga</header>
 
-    <p><strong>Nominace na turnaj</strong></p>
-
-    <ul>
-      <li>Hráč 1</li>
-      <li>Hráč 2</li>
-      <li>Hráč 3</li>
-      <li>Hráč 4</li>
+  <main>
+    <h2>Nominace na turnaj</h2>
+    <ul class="nominees">
+      <li>PepaFC</li>
+      <li>MartinaGamer</li>
+      <li>HonzaPlays</li>
+      <li>Lucka2026</li>
     </ul>
+    <p style="text-align:center; margin-top: 30px; font-style: italic;">
+      📅 Poslední aktualizace: dnes
+    </p>
+  </main>
 
-    <p>📅 Poslední aktualizace: dnes</p>
-  </div>
-
-  <footer>
-    Web pouze pro přátele
-  </footer>
+  <footer>Web pouze pro přátele – &copy; 2026 FC Mobile</footer>
 
 </body>
 </html>
