@@ -12,7 +12,7 @@
       color: #fff;
     }
 
-    /* CLEAN HEADER STRIPES */
+    /* HEADER */
     header {
       background: #001f4d; /* Dark blue base */
       text-align: center;
@@ -104,6 +104,16 @@
       cursor: default;
     }
 
+    /* COUNTDOWN TIMER */
+    #countdown {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: bold;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -141,12 +151,44 @@
       <li>Jarda Čmoud</li>
     </ul>
 
-    <p style="text-align:center; margin-top: 30px; font-style: italic;">
+    <!-- COUNTDOWN -->
+    <p id="countdown">⏰ Zbývá: 23:27:00</p>
+
+    <p style="text-align:center; margin-top: 20px; font-style: italic;">
       📅 Poslední aktualizace: dnes
     </p>
   </main>
 
   <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
+
+  <script>
+    // Set countdown to 23 hours 27 minutes from now
+    let matchTime = new Date();
+    matchTime.setHours(matchTime.getHours() + 23);
+    matchTime.setMinutes(matchTime.getMinutes() + 27);
+    matchTime.setSeconds(0);
+
+    function updateCountdown() {
+      let now = new Date();
+      let diff = matchTime - now;
+
+      if (diff < 0) {
+        document.getElementById('countdown').innerHTML = "Zápas začal!";
+        clearInterval(timerInterval);
+        return;
+      }
+
+      let hours = Math.floor(diff / (1000 * 60 * 60));
+      let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').innerHTML =
+        `⏰ Zbývá: ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    }
+
+    updateCountdown();
+    let timerInterval = setInterval(updateCountdown, 1000);
+  </script>
 
 </body>
 </html>
