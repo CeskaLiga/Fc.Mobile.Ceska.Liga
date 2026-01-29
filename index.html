@@ -8,7 +8,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #001f4d; /* Dark blue background */
+      background: #001f4d; /* Dark blue */
       color: #fff;
     }
 
@@ -17,21 +17,20 @@
       background: #001f4d;
       text-align: center;
       padding: 20px;
+      border-bottom: 5px solid #D7141A; /* Red stripe */
       position: relative;
-      border-bottom: 5px solid #D7141A; /* Red stripe at bottom */
     }
 
     header::after {
       content: "";
       display: block;
       height: 5px;
-      background: #fff; /* White stripe below red */
+      background: #fff; /* White stripe */
       margin-top: 5px;
     }
 
     header img {
       width: 80px;
-      height: auto;
       vertical-align: middle;
       margin-right: 15px;
     }
@@ -44,6 +43,7 @@
       text-shadow: 1px 1px 3px #000;
     }
 
+    /* MAIN CONTAINER */
     main {
       display: flex;
       flex-wrap: wrap;
@@ -53,9 +53,9 @@
       margin: 40px auto;
     }
 
-    /* NOMINEES */
+    /* NOMINEES BOX */
     .nominees-box {
-      flex: 1 1 300px;
+      flex: 1 1 400px;
       min-width: 300px;
       background: rgba(255,255,255,0.05);
       padding: 20px;
@@ -76,14 +76,14 @@
       line-height: 1.7;
     }
 
-    /* GLOWING HOVER */
+    /* GLOWING HOVER EFFECT */
     ul.nominees li {
       position: relative;
       overflow: hidden;
       background: rgba(255,255,255,0.05);
       margin: 10px 0;
       padding: 12px 18px;
-      border-left: 5px solid #D7141A; /* Red accent */
+      border-left: 5px solid #D7141A;
       border-radius: 6px;
       transition: all 0.3s ease;
     }
@@ -114,20 +114,30 @@
       cursor: default;
     }
 
-    /* TOP PLAYERS */
+    /* COUNTDOWN */
+    #countdown {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* TOP PLAYERS PODIUM */
     .top-players {
-      flex: 1 1 250px;
-      min-width: 250px;
+      flex: 0 0 220px; /* fixed width, doesn’t expand too much */
       background: rgba(255,255,255,0.05);
-      padding: 20px;
+      padding: 15px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      align-self: flex-start; /* aligns to top of nominee box */
     }
 
     .top-players h3 {
       text-align: center;
-      color: #fff;
       margin-bottom: 15px;
+      color: #fff;
     }
 
     .top-players ul {
@@ -151,21 +161,24 @@
       box-shadow: 0 0 8px #fff;
     }
 
-    /* COUNTDOWN */
-    #countdown {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1.3rem;
-      color: #fff;
-      font-weight: bold;
-    }
-
+    /* FOOTER */
     footer {
       text-align: center;
       font-size: 0.9rem;
       margin: 40px 0 20px 0;
       color: #ccc;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .top-players {
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
@@ -200,10 +213,10 @@
         <li>Jarda Čmoud</li>
       </ul>
 
-      <p id="countdown">⏰ Zbývá: 23:27:00</p>
+      <p id="countdown">⏰ Zbývá: 23:09:00</p>
     </div>
 
-    <!-- Top Players -->
+    <!-- Top Players Podium -->
     <div class="top-players">
       <h3>Nejaktivnější hráči</h3>
       <ul>
@@ -217,10 +230,10 @@
   <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
 
   <script>
-    // Countdown 23 hours 27 minutes from now
+    // Countdown 23 hours 09 minutes from now
     let matchTime = new Date();
     matchTime.setHours(matchTime.getHours() + 23);
-    matchTime.setMinutes(matchTime.getMinutes() + 27);
+    matchTime.setMinutes(matchTime.getMinutes() + 09);
     matchTime.setSeconds(0);
 
     function updateCountdown() {
