@@ -12,18 +12,21 @@
       color: #fff;
     }
 
-    /* HEADER WITH DIAGONAL CZECH FLAG STRIPES */
+    /* CLEAN HEADER STRIPES */
     header {
-      background: repeating-linear-gradient(
-        135deg,
-        #D7141A 0px 20px,   /* Red */
-        #fff 20px 40px,     /* White */
-        #001f4d 40px 60px   /* Dark Blue */
-      );
+      background: #001f4d; /* Dark blue base */
       text-align: center;
       padding: 20px;
       position: relative;
       border-bottom: 5px solid #D7141A; /* Red stripe at bottom */
+    }
+
+    header::after {
+      content: "";
+      display: block;
+      height: 5px;
+      background: #fff; /* White stripe below red */
+      margin-top: 5px;
     }
 
     header img {
@@ -63,14 +66,14 @@
       line-height: 1.7;
     }
 
-    /* ANIMATED HOVER EFFECTS FOR NOMINEES */
+    /* GLOWING ANIMATED HOVER FOR NOMINEES */
     ul.nominees li {
       position: relative;
       overflow: hidden;
       background: rgba(255,255,255,0.05);
       margin: 10px 0;
       padding: 12px 18px;
-      border-left: 5px solid #D7141A;
+      border-left: 5px solid #D7141A; /* Red accent */
       border-radius: 6px;
       transition: all 0.3s ease;
     }
@@ -112,38 +115,4 @@
 <body>
 
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_Fotbalove_reprezentace_Ceske_republiky.svg" 
-         alt="Czech Football Logo" onerror="this.style.display='none'">
-    <h1>FC Mobile – Česká Liga</h1>
-  </header>
-
-  <main>
-    <h2>Nominační seznam – zápas proti Arab FC</h2>
-    <ul class="nominees">
-      <li>PatrikCZ-ACS</li>
-      <li>Honza</li>
-      <li>Mbappégoat</li>
-      <li>Jony</li>
-      <li>Kreky</li>
-      <li>SlaviaPraha</li>
-      <li>Pavko_SVK</li>
-      <li>Lukas_svk</li>
-      <li>CzechFootball</li>
-      <li>Real Madrid</li>
-      <li>Azbuka</li>
-      <li>Klaksanátor</li>
-      <li>dessi</li>
-      <li>Djee</li>
-      <li>Mirovka</li>
-      <li>Jarda Čmoud</li>
-    </ul>
-
-    <p style="text-align:center; margin-top: 30px; font-style: italic;">
-      📅 Poslední aktualizace: dnes
-    </p>
-  </main>
-
-  <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
-
-</body>
-</html>
+    <img src="https://uplo
