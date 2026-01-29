@@ -12,20 +12,18 @@
       color: #fff;
     }
 
+    /* HEADER WITH DIAGONAL CZECH FLAG STRIPES */
     header {
-      background: #001f4d;
+      background: repeating-linear-gradient(
+        135deg,
+        #D7141A 0px 20px,   /* Red */
+        #fff 20px 40px,     /* White */
+        #001f4d 40px 60px   /* Dark Blue */
+      );
       text-align: center;
       padding: 20px;
       position: relative;
-      border-bottom: 5px solid #D7141A; /* Red stripe */
-    }
-
-    header::after {
-      content: "";
-      display: block;
-      height: 5px;
-      background: #fff; /* White stripe */
-      margin-top: 5px;
+      border-bottom: 5px solid #D7141A; /* Red stripe at bottom */
     }
 
     header img {
@@ -65,13 +63,36 @@
       line-height: 1.7;
     }
 
+    /* ANIMATED HOVER EFFECTS FOR NOMINEES */
     ul.nominees li {
+      position: relative;
+      overflow: hidden;
       background: rgba(255,255,255,0.05);
       margin: 10px 0;
       padding: 12px 18px;
-      border-left: 5px solid #D7141A; /* Red accent like the flag */
+      border-left: 5px solid #D7141A;
       border-radius: 6px;
       transition: all 0.3s ease;
+    }
+
+    ul.nominees li::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.0), rgba(255,255,255,0.3), rgba(255,255,255,0.0));
+      transform: skewX(-20deg);
+    }
+
+    ul.nominees li:hover::before {
+      animation: shine 1s forwards;
+    }
+
+    @keyframes shine {
+      0% { left: -75%; }
+      100% { left: 125%; }
     }
 
     ul.nominees li:hover {
