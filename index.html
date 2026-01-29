@@ -126,7 +126,7 @@
 
     /* TOP PLAYERS PODIUM */
     .top-players {
-      flex: 0 0 220px; /* fixed width, doesn’t expand too much */
+      flex: 0 0 300px; /* widened from 220px to 300px */
       background: rgba(255,255,255,0.05);
       padding: 15px;
       border-radius: 12px;
@@ -213,7 +213,7 @@
         <li>Jarda Čmoud</li>
       </ul>
 
-      <p id="countdown">⏰ Zbývá: 23:09:00</p>
+      <p id="countdown">⏰ Zbývá: 23:06:00</p>
     </div>
 
     <!-- Top Players Podium -->
@@ -230,10 +230,10 @@
   <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
 
   <script>
-    // Countdown 23 hours 09 minutes from now
+    // Countdown 23 hours 06 minutes from now
     let matchTime = new Date();
     matchTime.setHours(matchTime.getHours() + 23);
-    matchTime.setMinutes(matchTime.getMinutes() + 09);
+    matchTime.setMinutes(matchTime.getMinutes() + 06);
     matchTime.setSeconds(0);
 
     function updateCountdown() {
