@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>FC Mobile – Česká Liga</title>
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #001f4d; /* Dark blue */
+      background: #001f4d;
       color: #fff;
     }
 
@@ -17,7 +18,7 @@
       background: #001f4d;
       text-align: center;
       padding: 20px;
-      border-bottom: 5px solid #D7141A; /* Red stripe */
+      border-bottom: 5px solid #D7141A;
       position: relative;
     }
 
@@ -25,7 +26,7 @@
       content: "";
       display: block;
       height: 5px;
-      background: #fff; /* White stripe */
+      background: #fff;
       margin-top: 5px;
     }
 
@@ -38,12 +39,12 @@
     header h1 {
       display: inline-block;
       font-size: 2rem;
-      vertical-align: middle;
       margin: 0;
+      vertical-align: middle;
       text-shadow: 1px 1px 3px #000;
     }
 
-    /* MAIN CONTAINER */
+    /* MAIN */
     main {
       display: flex;
       flex-wrap: wrap;
@@ -53,7 +54,7 @@
       margin: 40px auto;
     }
 
-    /* NOMINEES BOX */
+    /* NOMINEES */
     .nominees-box {
       flex: 1 1 400px;
       min-width: 300px;
@@ -66,7 +67,6 @@
     h2 {
       text-align: center;
       margin-bottom: 20px;
-      color: #fff;
     }
 
     ul.nominees {
@@ -76,7 +76,6 @@
       line-height: 1.7;
     }
 
-    /* GLOWING HOVER EFFECT */
     ul.nominees li {
       position: relative;
       overflow: hidden;
@@ -95,7 +94,12 @@
       left: -75%;
       width: 50%;
       height: 100%;
-      background: linear-gradient(120deg, rgba(255,255,255,0.0), rgba(255,255,255,0.3), rgba(255,255,255,0.0));
+      background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0.3),
+        rgba(255,255,255,0)
+      );
       transform: skewX(-20deg);
     }
 
@@ -104,47 +108,43 @@
     }
 
     @keyframes shine {
-      0% { left: -75%; }
-      100% { left: 125%; }
+      from { left: -75%; }
+      to { left: 125%; }
     }
 
     ul.nominees li:hover {
       background: rgba(255,255,255,0.2);
       box-shadow: 0 0 10px #fff;
-      cursor: default;
     }
 
     /* COUNTDOWN */
     #countdown {
-      display: block;
+      margin-top: 25px;
       text-align: center;
-      margin-top: 20px;
       font-size: 1.3rem;
-      color: #fff;
       font-weight: bold;
     }
 
-    /* TOP PLAYERS PODIUM */
+    /* TOP PLAYERS */
     .top-players {
-      flex: 0 0 300px; /* widened from 220px to 300px */
+      flex: 0 0 300px;
       background: rgba(255,255,255,0.05);
       padding: 15px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
-      align-self: flex-start; /* aligns to top of nominee box */
+      align-self: flex-start;
     }
 
     .top-players h3 {
       text-align: center;
       margin-bottom: 15px;
-      color: #fff;
     }
 
     .top-players ul {
       list-style: none;
       padding: 0;
-      line-height: 1.6;
       font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     .top-players ul li {
@@ -165,7 +165,7 @@
     footer {
       text-align: center;
       font-size: 0.9rem;
-      margin: 40px 0 20px 0;
+      margin: 40px 0 20px;
       color: #ccc;
     }
 
@@ -182,81 +182,90 @@
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_Fotbalove_reprezentace_Ceske_republiky.svg" 
-         alt="Czech Football Logo" onerror="this.style.display='none'">
-    <h1>FC Mobile – Česká Liga</h1>
-  </header>
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Logo_Fotbalove_reprezentace_Ceske_republiky.svg"
+       alt="Czech Football Logo"
+       onerror="this.style.display='none'">
+  <h1>FC Mobile – Česká Liga</h1>
+</header>
 
-  <main>
-    <!-- Nominees -->
-    <div class="nominees-box">
-      <h2>Nominační seznam – zápas proti Arab FC</h2>
-      <ul class="nominees">
-        <li>PatrikCZ-ACS</li>
-        <li>Honza</li>
-        <li>Mbappégoat</li>
-        <li>Jony</li>
-        <li>Kreky</li>
-        <li>SlaviaPraha</li>
-        <li>Pavko_SVK</li>
-        <li>Lukas_svk</li>
-        <li>CzechFootball</li>
-        <li>Real Madrid</li>
-        <li>Azbuka</li>
-        <li>Klaksanátor</li>
-        <li>dessi</li>
-        <li>Djee</li>
-        <li>Mirovka</li>
-        <li>Jarda Čmoud</li>
-      </ul>
+<main>
 
-      <p id="countdown">⏰ Zbývá: 23:06:00</p>
-    </div>
+  <div class="nominees-box">
+    <h2>Nominační seznam – zápas proti Blue Lock INDIAN</h2>
 
-    <!-- Top Players Podium -->
-    <div class="top-players">
-      <h3>Nejaktivnější hráči</h3>
-      <ul>
-        <li>TORnado – 5280 Activity points</li>
-        <li>PatrikCZ-ACS – 5060 Activity points</li>
-        <li>Honza – 4925 Activity points</li>
-      </ul>
-    </div>
-  </main>
+    <ul class="nominees">
+      <li>Honza</li>
+      <li>PatrikCZ-ACS</li>
+      <li>Mbappégoat</li>
+      <li>dessi</li>
+      <li>CzechFootball</li>
+      <li>RealMadrid</li>
+      <li>Rikardo2</li>
+      <li>SKS</li>
+      <li>JardaČmoud</li>
+      <li>SlaviaPraha</li>
+      <li>TORnado</li>
+      <li>Pavko_SVK</li>
+      <li>ikonfloss</li>
+      <li>Djee</li>
+      <li>Kreky</li>
+      <li>garr_cz</li>
+    </ul>
 
-  <footer>Web pouze pro členy ligy – &copy; 2026 FC Mobile</footer>
+    <p id="countdown">⏰ Zbývá: 23:23:00</p>
+  </div>
 
-  <script>
-    // Countdown 23 hours 06 minutes from now
-    let matchTime = new Date();
-    matchTime.setHours(matchTime.getHours() + 23);
-    matchTime.setMinutes(matchTime.getMinutes() + 06);
-    matchTime.setSeconds(0);
+  <div class="top-players">
+    <h3>Nejaktivnější hráči</h3>
+    <ul>
+      <li>TORnado – 5280 Activity points</li>
+      <li>PatrikCZ-ACS – 5060 Activity points</li>
+      <li>Honza – 4925 Activity points</li>
+    </ul>
+  </div>
 
-    function updateCountdown() {
-      let now = new Date();
-      let diff = matchTime - now;
+</main>
 
-      if (diff < 0) {
-        document.getElementById('countdown').innerHTML = "Zápas začal!";
-        clearInterval(timerInterval);
-        return;
-      }
+<footer>
+  Web pouze pro členy ligy – &copy; 2026 FC Mobile
+</footer>
 
-      let hours = Math.floor(diff / (1000 * 60 * 60));
-      let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+<script>
+  /* ========= FIXED DEADLINE COUNTDOWN ========= */
 
-      document.getElementById('countdown').innerHTML =
-        `⏰ Zbývá: ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+  // Create deadline ONCE (23h 23m from page creation)
+  const matchTime = new Date();
+  matchTime.setHours(matchTime.getHours() + 23);
+  matchTime.setMinutes(matchTime.getMinutes() + 23);
+  matchTime.setSeconds(0);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = matchTime - now;
+    const el = document.getElementById("countdown");
+
+    if (diff <= 0) {
+      el.innerHTML = "⏰ Čas vypršel!";
+      clearInterval(timer);
+      return;
     }
 
-    updateCountdown();
-    let timerInterval = setInterval(updateCountdown, 1000);
-  </script>
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    el.innerHTML = `⏰ Zbývá: ${hours.toString().padStart(2,"0")}:${minutes
+      .toString()
+      .padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
+  }
+
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
