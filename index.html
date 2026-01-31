@@ -50,35 +50,37 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
     }
 
-    /* NOMINEES */
-    .nominees-box {
-      flex: 1 1 400px;
-      min-width: 300px;
+    /* BOXES */
+    .box {
       background: rgba(255,255,255,0.05);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
-    h2 {
+    h2, h3 {
       text-align: center;
       margin-bottom: 20px;
     }
 
-    ul.nominees {
+    /* NOMINEES */
+    .nominees-box {
+      flex: 1 1 420px;
+      min-width: 300px;
+    }
+
+    ul {
       list-style: none;
       padding: 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.7;
     }
 
-    ul.nominees li {
-      position: relative;
-      overflow: hidden;
+    ul li {
       background: rgba(255,255,255,0.05);
       margin: 10px 0;
       padding: 12px 18px;
@@ -87,32 +89,7 @@
       transition: all 0.3s ease;
     }
 
-    ul.nominees li::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0),
-        rgba(255,255,255,0.3),
-        rgba(255,255,255,0)
-      );
-      transform: skewX(-20deg);
-    }
-
-    ul.nominees li:hover::before {
-      animation: shine 1s forwards;
-    }
-
-    @keyframes shine {
-      from { left: -75%; }
-      to { left: 125%; }
-    }
-
-    ul.nominees li:hover {
+    ul li:hover {
       background: rgba(255,255,255,0.2);
       box-shadow: 0 0 10px #fff;
     }
@@ -121,47 +98,16 @@
     #countdown {
       margin-top: 25px;
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: bold;
     }
 
-    /* TOP PLAYERS */
-    .top-players {
+    /* SIDE TABLES */
+    .side-box {
       flex: 0 0 300px;
-      background: rgba(255,255,255,0.05);
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
       align-self: flex-start;
     }
 
-    .top-players h3 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .top-players ul {
-      list-style: none;
-      padding: 0;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .top-players ul li {
-      border-left: 5px solid #D7141A;
-      padding-left: 10px;
-      margin-bottom: 8px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    .top-players ul li:hover {
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 0 8px #fff;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -169,15 +115,10 @@
       color: #ccc;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       main {
         flex-direction: column;
         align-items: center;
-      }
-
-      .top-players {
-        margin-top: 20px;
       }
     }
   </style>
@@ -194,37 +135,49 @@
 
 <main>
 
-  <div class="nominees-box">
-    <h2>Nominační seznam – zápas proti Blue Lock INDIAN</h2>
+  <!-- NOMINEES -->
+  <div class="box nominees-box">
+    <h2>Nominační seznam – zápas proti Pan el Gallo</h2>
 
-    <ul class="nominees">
+    <ul>
       <li>Honza</li>
       <li>PatrikCZ-ACS</li>
-      <li>Mbappégoat</li>
       <li>dessi</li>
-      <li>CzechFootball</li>
+      <li>Mbappégoat</li>
+      <li>garr_cz</li>
+      <li>Kreky</li>
+      <li>Djee</li>
+      <li>ikonfloss</li>
+      <li>SlaviaPraha</li>
+      <li>Pavko_SVK</li>
       <li>RealMadrid</li>
-      <li>Rikardo2</li>
+      <li>TORnado</li>
       <li>SKS</li>
       <li>JardaČmoud</li>
-      <li>SlaviaPraha</li>
-      <li>TORnado</li>
-      <li>Pavko_SVK</li>
-      <li>ikonfloss</li>
-      <li>Djee</li>
-      <li>Kreky</li>
-      <li>garr_cz</li>
+      <li>Rikardo2</li>
+      <li>CzechFootball</li>
     </ul>
 
-    <p id="countdown">⏰ Zbývá: 23:23:00</p>
+    <p id="countdown">⏰ Načítání času…</p>
   </div>
 
-  <div class="top-players">
+  <!-- ACTIVITY -->
+  <div class="box side-box">
     <h3>Nejaktivnější hráči</h3>
     <ul>
       <li>TORnado – 5280 Activity points</li>
       <li>PatrikCZ-ACS – 5060 Activity points</li>
       <li>Honza – 4925 Activity points</li>
+    </ul>
+  </div>
+
+  <!-- TOP SCORERS -->
+  <div class="box side-box">
+    <h3>Nejlepší střelci</h3>
+    <ul>
+      <li>🥇 Honza – 68 gólů</li>
+      <li>🥈 PatrikCZ-ACS – 62 gólů</li>
+      <li>🥉 Kreky – 50 gólů</li>
     </ul>
   </div>
 
@@ -235,32 +188,45 @@
 </footer>
 
 <script>
-  /* ========= FIXED DEADLINE COUNTDOWN ========= */
+  /* ===== PERSISTENT COUNTDOWN (23h 17m) ===== */
 
-  // Create deadline ONCE (23h 23m from page creation)
-  const matchTime = new Date();
-  matchTime.setHours(matchTime.getHours() + 23);
-  matchTime.setMinutes(matchTime.getMinutes() + 23);
-  matchTime.setSeconds(0);
+  const STORAGE_KEY = "match_pan_el_gallo_deadline";
+  const HOURS = 23;
+  const MINUTES = 17;
+
+  let deadline = localStorage.getItem(STORAGE_KEY);
+
+  if (!deadline) {
+    const now = new Date();
+    now.setHours(now.getHours() + HOURS);
+    now.setMinutes(now.getMinutes() + MINUTES);
+    now.setSeconds(0);
+    deadline = now.getTime();
+    localStorage.setItem(STORAGE_KEY, deadline);
+  } else {
+    deadline = parseInt(deadline, 10);
+  }
 
   function updateCountdown() {
-    const now = new Date();
-    const diff = matchTime - now;
+    const now = Date.now();
+    const diff = deadline - now;
     const el = document.getElementById("countdown");
 
     if (diff <= 0) {
-      el.innerHTML = "⏰ Čas vypršel!";
+      el.textContent = "⏰ Čas vypršel!";
       clearInterval(timer);
+      localStorage.removeItem(STORAGE_KEY);
       return;
     }
 
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
 
-    el.innerHTML = `⏰ Zbývá: ${hours.toString().padStart(2,"0")}:${minutes
-      .toString()
-      .padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
+    el.textContent =
+      `⏰ Zbývá: ${String(h).padStart(2,"0")}:` +
+      `${String(m).padStart(2,"0")}:` +
+      `${String(s).padStart(2,"0")}`;
   }
 
   updateCountdown();
