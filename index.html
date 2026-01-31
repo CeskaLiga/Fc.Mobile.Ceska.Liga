@@ -19,7 +19,6 @@
       text-align: center;
       padding: 20px;
       border-bottom: 5px solid #D7141A;
-      position: relative;
     }
 
     header::after {
@@ -44,17 +43,15 @@
       text-shadow: 1px 1px 3px #000;
     }
 
-    /* MAIN */
+    /* MAIN LAYOUT */
     main {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      max-width: 1100px;
+      gap: 25px;
+      max-width: 1150px;
       margin: 40px auto;
+      padding: 0 20px;
     }
 
-    /* BOXES */
     .box {
       background: rgba(255,255,255,0.05);
       padding: 20px;
@@ -69,8 +66,8 @@
 
     /* NOMINEES */
     .nominees-box {
-      flex: 1 1 420px;
-      min-width: 300px;
+      flex: 1;
+      min-width: 320px;
     }
 
     ul {
@@ -102,10 +99,12 @@
       font-weight: bold;
     }
 
-    /* SIDE TABLES */
-    .side-box {
-      flex: 0 0 300px;
-      align-self: flex-start;
+    /* RIGHT COLUMN */
+    .right-column {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     footer {
@@ -115,10 +114,15 @@
       color: #ccc;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       main {
         flex-direction: column;
         align-items: center;
+      }
+
+      .right-column {
+        width: 100%;
       }
     }
   </style>
@@ -161,24 +165,27 @@
     <p id="countdown">⏰ Načítání času…</p>
   </div>
 
-  <!-- ACTIVITY -->
-  <div class="box side-box">
-    <h3>Nejaktivnější hráči</h3>
-    <ul>
-      <li>TORnado – 5280 Activity points</li>
-      <li>PatrikCZ-ACS – 5060 Activity points</li>
-      <li>Honza – 4925 Activity points</li>
-    </ul>
-  </div>
+  <!-- RIGHT SIDE -->
+  <div class="right-column">
 
-  <!-- TOP SCORERS -->
-  <div class="box side-box">
-    <h3>Nejlepší střelci</h3>
-    <ul>
-      <li>🥇 Honza – 68 gólů</li>
-      <li>🥈 PatrikCZ-ACS – 62 gólů</li>
-      <li>🥉 Kreky – 50 gólů</li>
-    </ul>
+    <div class="box">
+      <h3>Nejaktivnější hráči</h3>
+      <ul>
+        <li>TORnado – 5280 Activity points</li>
+        <li>PatrikCZ-ACS – 5060 Activity points</li>
+        <li>Honza – 4925 Activity points</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h3>Nejlepší střelci</h3>
+      <ul>
+        <li>🥇 Honza – 68 gólů</li>
+        <li>🥈 PatrikCZ-ACS – 62 gólů</li>
+        <li>🥉 Kreky – 50 gólů</li>
+      </ul>
+    </div>
+
   </div>
 
 </main>
@@ -188,11 +195,11 @@
 </footer>
 
 <script>
-  /* ===== PERSISTENT COUNTDOWN (23h 17m) ===== */
+  /* ===== PERSISTENT COUNTDOWN (23h 14m) ===== */
 
   const STORAGE_KEY = "match_pan_el_gallo_deadline";
   const HOURS = 23;
-  const MINUTES = 17;
+  const MINUTES = 14;
 
   let deadline = localStorage.getItem(STORAGE_KEY);
 
@@ -208,8 +215,7 @@
   }
 
   function updateCountdown() {
-    const now = Date.now();
-    const diff = deadline - now;
+    const diff = deadline - Date.now();
     const el = document.getElementById("countdown");
 
     if (diff <= 0) {
@@ -235,3 +241,4 @@
 
 </body>
 </html>
+
