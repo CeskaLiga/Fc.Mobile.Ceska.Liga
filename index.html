@@ -13,7 +13,6 @@
       color: #fff;
     }
 
-    /* HEADER */
     header {
       background: #001f4d;
       text-align: center;
@@ -43,7 +42,6 @@
       text-shadow: 1px 1px 3px #000;
     }
 
-    /* MAIN LAYOUT */
     main {
       display: flex;
       gap: 25px;
@@ -64,7 +62,6 @@
       margin-bottom: 20px;
     }
 
-    /* NOMINEES */
     .nominees-box {
       flex: 1;
       min-width: 320px;
@@ -91,15 +88,6 @@
       box-shadow: 0 0 10px #fff;
     }
 
-    /* COUNTDOWN */
-    #countdown {
-      margin-top: 25px;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
-
-    /* RIGHT COLUMN */
     .right-column {
       width: 300px;
       display: flex;
@@ -114,7 +102,6 @@
       color: #ccc;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
       main {
         flex-direction: column;
@@ -139,33 +126,21 @@
 
 <main>
 
-  <!-- NOMINEES -->
   <div class="box nominees-box">
-    <h2>Nominační seznam – zápas proti Pan el Gallo</h2>
+    <h2>Nominační seznam – zápas proti IT Majdur</h2>
 
     <ul>
-      <li>Honza</li>
-      <li>PatrikCZ-ACS</li>
-      <li>dessi</li>
-      <li>Mbappégoat</li>
-      <li>garr_cz</li>
-      <li>Kreky</li>
-      <li>Djee</li>
-      <li>ikonfloss</li>
-      <li>SlaviaPraha</li>
-      <li>Pavko_SVK</li>
-      <li>RealMadrid</li>
-      <li>TORnado</li>
-      <li>SKS</li>
-      <li>JardaČmoud</li>
-      <li>Rikardo2</li>
       <li>CzechFootball</li>
+      <li>RealMadrid</li>
+      <li>Mbappégoat</li>
+      <li>Kreky</li>
+      <li>PatrikCZ-ACS</li>
+      <li>Pavko_SVK</li>
+      <li>JardaČmoud</li>
+      <li>Honza</li>
     </ul>
-
-    <p id="countdown">⏰ Načítání času…</p>
   </div>
 
-  <!-- RIGHT SIDE -->
   <div class="right-column">
 
     <div class="box">
@@ -194,51 +169,5 @@
   Web pouze pro členy ligy – &copy; 2026 FC Mobile
 </footer>
 
-<script>
-  /* ===== PERSISTENT COUNTDOWN (23h 14m) ===== */
-
-  const STORAGE_KEY = "match_pan_el_gallo_deadline";
-  const HOURS = 23;
-  const MINUTES = 14;
-
-  let deadline = localStorage.getItem(STORAGE_KEY);
-
-  if (!deadline) {
-    const now = new Date();
-    now.setHours(now.getHours() + HOURS);
-    now.setMinutes(now.getMinutes() + MINUTES);
-    now.setSeconds(0);
-    deadline = now.getTime();
-    localStorage.setItem(STORAGE_KEY, deadline);
-  } else {
-    deadline = parseInt(deadline, 10);
-  }
-
-  function updateCountdown() {
-    const diff = deadline - Date.now();
-    const el = document.getElementById("countdown");
-
-    if (diff <= 0) {
-      el.textContent = "⏰ Čas vypršel!";
-      clearInterval(timer);
-      localStorage.removeItem(STORAGE_KEY);
-      return;
-    }
-
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-
-    el.textContent =
-      `⏰ Zbývá: ${String(h).padStart(2,"0")}:` +
-      `${String(m).padStart(2,"0")}:` +
-      `${String(s).padStart(2,"0")}`;
-  }
-
-  updateCountdown();
-  const timer = setInterval(updateCountdown, 1000);
-</script>
-
 </body>
 </html>
-
